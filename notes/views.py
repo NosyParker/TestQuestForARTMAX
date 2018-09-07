@@ -14,8 +14,9 @@ def notes(request):
             note.publish()
             note.save()
         else:
-            note = NoteForm()
-
+            form = NoteForm()
+    else:
+        form = NoteForm()
     notes = Note.objects.filter(published_date__lte = timezone.now()).order_by('published_date')
 
     paginator = Paginator(notes, 5)

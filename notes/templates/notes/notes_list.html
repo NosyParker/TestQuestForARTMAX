@@ -3,7 +3,7 @@
 {% block form %}
     <div class="container" id="note">
         <h2>Напишите что-нибудь...</h2>
-        <form id="new_note" method="POST" class="form" action="{% url 'add_note' %}">
+        <form id="new_note" method="POST" class="form">
             {% csrf_token %}
             {{ form.as_p }}
             <button type="submit" class="save btn btn-default">Опубликовать!</button>
