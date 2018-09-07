@@ -1,0 +1,12 @@
+{% extends 'notes/base_page.html' %}
+
+{% block content %}
+    <div class="container">
+        <h1>Название: {{ note.title }}</h1>
+        <p>Дата: {{ note.published_date }}</p>
+        <p>{{ note.text|linebreaksbr }}</p>
+    </div>
+    <div class="container">
+        <a href="{% url 'notes_list' %}">Назад</a>
+    </div>
+{% endblock %}
